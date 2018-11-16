@@ -1,0 +1,49 @@
+﻿@model TuneBlack.Dtos.TrackDtos.TrackForCreationDto
+
+@{
+    ViewData["Title"] = "AddTrack";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddTrack</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form asp-action="AddTrack" enctype="multipart/form-data">
+
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="TrackName"></label>
+                    <input asp-for="TrackName" class="form-control" />
+                    <span asp-validation-for="TrackName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Genre"></label>
+                    <input asp-for="Genre" class="form-control" />
+                    <span asp-validation-for="Genre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProducerName"></label>
+                    <input asp-for="ProducerName" class="form-control" />
+                    <span asp-validation-for="ProducerName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReleaseDate"></label>
+                    <input asp-for="ReleaseDate" type="date" class="form-control" />
+                    <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TrackPathUrl"></label>
+                    <input asp-for="TrackPathUrl" type="file" name="file" class="form-control" />
+                    <span asp-validation-for="TrackPathUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Add Track</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+</div>

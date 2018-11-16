@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TuneBlack.Dtos.TrackDtos.TrackDto>
+@{ 
+    ViewData["Title"] = "Tune Black";
+}
+<div class="row">
+    
+    @{
+        foreach (var n in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <audio id="player"  src="@n.TrackPathUrl" type="audio/mp3" controls="controls"></audio>
+                    <div class="card-body">
+                        <address class="card-title">
+                            <text style="font-size:smaller; font-weight:700">Artist Name</text>:&nbsp;<text style="font-size:smaller;">@n.ArtistName</text><br />
+                            <text style="font-size:smaller; font-weight:700">Track Name</text>:&nbsp;<text style="font-size:smaller;">@n.TrackName</text><br />
+                            <text style="font-size:smaller; font-weight:700">Album Type</text>:&nbsp;<text style="font-size:smaller;">@n.AlbumName</text><br />
+                            <text style="font-size:smaller; font-weight:700">Release Date</text>:&nbsp;<text style="font-size:smaller;">@n.ReleaseDate</text><br />
+                            <text style="font-size:smaller; font-weight:700">Producer Name</text>:&nbsp;<text style="font-size:smaller;">@n.ProducerName</text><br />
+                        </address>
+                        @*<h5>$24.99</h5>*@
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            @{
+                                for (int i = 1; i <= 5; i++)
+                                {
+                                    <small>
+                                        &#9734;
+                                    </small>
+                                }
+                            }
+                        </small>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
